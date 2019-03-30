@@ -17,8 +17,9 @@
 <meta property="og:locale" content="zh">
 <meta property="og:image" content="http://yoursite.com/images/testpic.png">
 <meta property="og:image" content="http://yoursite.com/2019/03/31/pictest/testpic_sameroot.png">
-<meta property="og:image" content="http://yoursite.com/testpic_uproot.ping">
-<meta property="og:updated_time" content="2019-03-30T17:00:52.601Z">
+<meta property="og:image" content="http://yoursite.com/testpic_uproot.png">
+<meta property="og:image" content="http://yoursite.com/another_images/testpic_another.png">
+<meta property="og:updated_time" content="2019-03-30T17:10:02.458Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="pictest">
 <meta name="twitter:description" content="Case1部署hexo工程项目中拥有一个source文件夹，在该文件夹下新建images文件夹，之后在里面存入testpic.png文件。之后，在需要引用该图片的markdown文件中插入以下内容来插入图片 1![测试图片](/images/testpic.png &quot;插入的测试图片&quot;) 之后按照正常流程部署即可 效果  Case2部署可以发现，上文中图片路径的，是相对于对应文章的md文件的路径。那">
@@ -99,15 +100,20 @@
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">测试图片</span>](<span class="link">/images/testpic.png "插入的测试图片"</span>)</span><br></pre></td></tr></table></figure>
 <p>之后按照正常流程部署即可</p>
 <h3 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h3><p><img src="/images/testpic.png" alt="测试图片" title="插入的测试图片"> </p>
-<h2 id="Case2"><a href="#Case2" class="headerlink" title="Case2"></a>Case2</h2><h3 id="部署-1"><a href="#部署-1" class="headerlink" title="部署"></a>部署</h3><p>可以发现，上文中图片路径的，是相对于对应文章的md文件的路径。那么不放在source/images文件夹中是否可以？<br>在本Case中，将在与该文章对应的md文件相同文件夹下存储testpic_sameroot.png文件，在source根目录下存储testpic_uproot.png文件。<br>之后将以如下代码进行引用  </p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">测试图片_相同目录</span>](<span class="link">testpic_sameroot.png "相同目录的测试图片"</span>)  </span><br><span class="line">![<span class="string">测试图片_父文件夹</span>](<span class="link">/testpic_uproot.ping "父文件夹的测试图片"</span>)</span><br></pre></td></tr></table></figure>
-<h3 id="效果-1"><a href="#效果-1" class="headerlink" title="效果"></a>效果</h3><p><img src="testpic_sameroot.png" alt="测试图片_相同目录" title="相同目录的测试图片"><br><img src="/testpic_uproot.ping" alt="测试图片_父文件夹" title="父文件夹的测试图片">  </p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://hexo.io/zh-cn/docs/asset-folders" target="_blank" rel="noopener">hexo网站源链接</a></p>
+<h2 id="Case2"><a href="#Case2" class="headerlink" title="Case2"></a>Case2</h2><h3 id="部署-1"><a href="#部署-1" class="headerlink" title="部署"></a>部署</h3><p>可以发现，上文中图片路径的，是相对于对应文章的md文件的路径。那么不放在source/images文件夹中是否可以？<br>在本Case中，将进行如下测试：  </p>
+<ul>
+<li>与该文章对应的md文件相同文件夹下存储testpic_sameroot.png文件</li>
+<li>在source根目录下存储testpic_uproot.png文件</li>
+<li>新建另一个文件夹another_images，并在其中存储testpic_another.png文件<br>之后将以如下代码进行引用  </li>
+</ul>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">测试图片_相同目录</span>](<span class="link">testpic_sameroot.png "相同目录的测试图片"</span>)  </span><br><span class="line">![<span class="string">测试图片_父文件夹</span>](<span class="link">/testpic_uproot.png "父文件夹的测试图片"</span>)  </span><br><span class="line">![<span class="string">测试图片_同层异名</span>](<span class="link">/another_images/testpic_another.png "其他同层文件夹的测试图片"</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="效果-1"><a href="#效果-1" class="headerlink" title="效果"></a>效果</h3><p><img src="testpic_sameroot.png" alt="测试图片_相同目录" title="相同目录的测试图片"><br><img src="/testpic_uproot.png" alt="测试图片_父文件夹" title="父文件夹的测试图片"><br><img src="/another_images/testpic_another.png" alt="测试图片_同层异名" title="父文件夹的测试图片">  </p>
+<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://hexo.io/zh-cn/docs/asset-folders" target="_blank" rel="noopener">hexo网站源链接</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/31/pictest/" data-id="cjtvqtpvq00015wkpis28hugi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/03/31/pictest/" data-id="cjtvr4g1v00011gkp65zkojwi" class="article-share-link">Share</a>
       
       
     </footer>
